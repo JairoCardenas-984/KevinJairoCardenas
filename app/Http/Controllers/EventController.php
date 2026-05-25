@@ -6,9 +6,17 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Http\Requests\StoreEventRequest;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class EventController extends Controller
 {
+
+    public function index():View
+    {
+        $events =Event::all();
+         return view('events.index',['events'=> $events]);   
+    }
+
     public function store(StoreEventRequest $request):RedirectResponse
     {
         $eventData = $request->all();
