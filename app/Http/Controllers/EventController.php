@@ -42,4 +42,17 @@ public function update(\Illuminate\Http\Request $request, Event $event): \Illumi
     
     return response()->json($event, 200);
 }
+
+public function destroy(Event $event)
+{
+    
+
+    $event->delete();
+
+    
+    return response()->noContent();
+}
+
+
+}
 }
