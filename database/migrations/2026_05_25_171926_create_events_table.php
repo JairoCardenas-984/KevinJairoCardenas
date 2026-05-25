@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('feature');
+            $table->string('featured')->nullable();
             $table->timestamp('date');
             $table->time('time');
             $table->string('location');
@@ -29,4 +29,6 @@ return new class extends Migration
     {
         Schema::dropIfExists('events');
     }
+};
+};
 };
